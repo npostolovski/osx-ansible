@@ -5,3 +5,5 @@
     shell: brew cask install amethyst
   - name: install google chrome
     shell: brew cask install google-chrome
+  - name: install hyper terminal
+    shell: brew cask install hyper
