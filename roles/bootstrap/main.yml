@@ -7,3 +7,18 @@
     shell: brew cask install google-chrome
   - name: install hyper terminal
     shell: brew cask install hyper
+  - name: install ruby-build
+    shell: brew install ruby-build
+  - name: install rbenv
+    shell: brew install rbenv
+  - name: create ~/.bash_profile
+    file:
+      path: ~/.bash_profile
+      state: touch
+  - name: check whether rbenv config added to bash_profile
+    shell: grep "rbenv" ~/.bash_profile
+    ignore_errors: true
+    register: test_rbenv_config
+  - name: add rbenv config to bash_profile
+    lineinfile: dest=~/.bash_profile line="eval $(rbenv init -)"
+    when: test_rbenv_config.stdout == ""
