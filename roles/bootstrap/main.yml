@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install amethyst window manager
+    shell: brew cask install amethyst
+  - name: install google chrome
+    shell: brew cask install google-chrome
