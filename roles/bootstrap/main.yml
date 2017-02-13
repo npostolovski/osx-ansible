@@ -42,3 +42,5 @@
     shell: brew install packer
   - name: install docker and docker-machine
     shell: brew install docker docker-machine
+  - name: install postman
+    shell: brew cask install postman
