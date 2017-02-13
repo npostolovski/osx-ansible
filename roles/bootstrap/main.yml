@@ -95,3 +95,7 @@
     homebrew_cask:
       name: slack
       state: present
+  - name: install skype
+    homebrew_cask:
+      name: skype
+      state: present
