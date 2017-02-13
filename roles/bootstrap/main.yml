@@ -1,6 +1,12 @@
 ---
 - hosts: localhost
   tasks:
+  - name: generate ssh key
+    user:
+      name: tash 
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
   - name: install amethyst window manager
     shell: brew cask install amethyst
   - name: install google chrome
