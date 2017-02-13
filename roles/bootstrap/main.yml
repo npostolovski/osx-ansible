@@ -27,17 +27,10 @@
     homebrew:
       name: rbenv
       state: present
-  - name: create ~/.bash_profile
-    file:
-      path: ~/.bash_profile
-      state: touch
-  - name: check whether rbenv config added to bash_profile
-    shell: grep "rbenv" ~/.bash_profile
-    ignore_errors: true
-    register: test_rbenv_config
-  - name: add rbenv config to bash_profile
-    lineinfile: dest=~/.bash_profile line="eval $(rbenv init -)"
-    when: test_rbenv_config.stdout == ""
+  - name: copy ~/.bash_profile
+    copy:
+      src: ../../dotfiles/.bash_profile
+      dest: ~/.bash_profile
   - name: install the_silver_searcher
     homebrew:
       name: the_silver_searcher
