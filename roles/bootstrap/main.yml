@@ -7,6 +7,12 @@
       generate_ssh_key: yes
       ssh_key_bits: 2048
       ssh_key_file: .ssh/id_rsa
+  - name: check homebrew install
+    shell: which brew
+    register: homebrew_installed
+  - name: install homebrew
+    shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    when: homebrew_installed.stdout == ""
   - name: install amethyst window manager
     homebrew_cask:
       name: amethyst
