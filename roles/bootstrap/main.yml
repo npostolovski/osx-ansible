@@ -99,3 +99,7 @@
     homebrew_cask:
       name: skype
       state: present
+  - name: install steam
+    homebrew_cask:
+      name: steam
+      state: present
