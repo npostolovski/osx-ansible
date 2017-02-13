@@ -87,3 +87,7 @@
     copy:
       src: ../../dotfiles/.hyper.js
       dest: ~/.hyper.js
+  - name: install spotify
+    homebrew_cask:
+      name: spotify
+      state: present
