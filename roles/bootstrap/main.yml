@@ -80,3 +80,7 @@
   - name: install ruby 2.4
     shell: rbenv install 2.4.0
     when: ruby_2_4_check.stdout == ""
+  - name: install npm
+    homebrew:
+      name: npm
+      state: present
