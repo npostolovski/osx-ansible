@@ -24,3 +24,7 @@
     when: test_rbenv_config.stdout == ""
   - name: install the_silver_searcher
     shell: brew install the_silver_searcher
+  - name: copy git config
+    copy:
+      src: ../../dotfiles/.gitconfig
+      dest: ~/.gitconfig
