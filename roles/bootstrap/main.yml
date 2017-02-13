@@ -22,3 +22,5 @@
   - name: add rbenv config to bash_profile
     lineinfile: dest=~/.bash_profile line="eval $(rbenv init -)"
     when: test_rbenv_config.stdout == ""
+  - name: install the_silver_searcher
+    shell: brew install the_silver_searcher
