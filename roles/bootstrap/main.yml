@@ -34,3 +34,5 @@
     copy:
       src: ../../dotfiles/.gitconfig
       dest: ~/.gitconfig
+  - name: install virtualbox
+    shell: brew cask install virtualbox
