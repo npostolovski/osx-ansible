@@ -36,3 +36,5 @@
       dest: ~/.gitconfig
   - name: install virtualbox
     shell: brew cask install virtualbox
+  - name: install vagrant
+    shell: brew cask install vagrant
