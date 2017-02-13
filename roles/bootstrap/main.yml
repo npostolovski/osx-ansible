@@ -91,3 +91,7 @@
     homebrew_cask:
       name: spotify
       state: present
+  - name: install slack
+    homebrew_cask:
+      name: slack
+      state: present
