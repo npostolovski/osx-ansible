@@ -38,3 +38,5 @@
     shell: brew cask install virtualbox
   - name: install vagrant
     shell: brew cask install vagrant
+  - name: install packer
+    shell: brew cask install packer
