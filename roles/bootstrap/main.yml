@@ -40,3 +40,5 @@
     shell: brew cask install vagrant
   - name: install packer
     shell: brew install packer
+  - name: install docker and docker-machine
+    shell: brew install docker docker-machine
