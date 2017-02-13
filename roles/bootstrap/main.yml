@@ -74,3 +74,9 @@
     homebrew_cask:
       name: atom
       state: present
+  - name: check ruby 2.4 installed
+    shell: rbenv versions | grep 2.4
+    register: ruby_2_4_check
+  - name: install ruby 2.4
+    shell: rbenv install 2.4.0
+    when: ruby_2_4_check.stdout == ""
