@@ -44,3 +44,5 @@
     shell: brew install docker docker-machine
   - name: install postman
     shell: brew cask install postman
+  - name: install atom
+    shell: brew cask install atom
