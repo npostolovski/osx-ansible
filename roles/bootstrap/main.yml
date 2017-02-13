@@ -8,15 +8,25 @@
       ssh_key_bits: 2048
       ssh_key_file: .ssh/id_rsa
   - name: install amethyst window manager
-    shell: brew cask install amethyst
+    homebrew_cask:
+      name: amethyst
+      state: present
   - name: install google chrome
-    shell: brew cask install google-chrome
+    homebrew_cask:
+      name: google-chrome
+      state: present 
   - name: install hyper terminal
-    shell: brew cask install hyper
+    homebrew_cask:
+      name: hyper
+      state: present
   - name: install ruby-build
-    shell: brew install ruby-build
+    homebrew:
+      name: ruby-build
+      state: present
   - name: install rbenv
-    shell: brew install rbenv
+    homebrew:
+      name: rbenv
+      state: present
   - name: create ~/.bash_profile
     file:
       path: ~/.bash_profile
@@ -29,20 +39,38 @@
     lineinfile: dest=~/.bash_profile line="eval $(rbenv init -)"
     when: test_rbenv_config.stdout == ""
   - name: install the_silver_searcher
-    shell: brew install the_silver_searcher
+    homebrew:
+      name: the_silver_searcher
+      state: present
   - name: copy git config
     copy:
       src: ../../dotfiles/.gitconfig
       dest: ~/.gitconfig
   - name: install virtualbox
-    shell: brew cask install virtualbox
+    homebrew_cask:
+      name: virtualbox
+      state: present
   - name: install vagrant
-    shell: brew cask install vagrant
+    homebrew_cask:
+      name: vagrant
+      state: present
   - name: install packer
-    shell: brew install packer
-  - name: install docker and docker-machine
-    shell: brew install docker docker-machine
+    homebrew:
+      name: packer
+      state: present
+  - name: install docker
+    homebrew:
+      name: docker
+      state: present
+  - name: install docker-machine
+    homebrew:
+      name: docker-machine
+      state: present
   - name: install postman
-    shell: brew cask install postman
+    homebrew_cask:
+      name: postman
+      state: present
   - name: install atom
-    shell: brew cask install atom
+    homebrew_cask:
+      name: atom
+      state: present
