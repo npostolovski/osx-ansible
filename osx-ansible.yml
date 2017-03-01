@@ -13,19 +13,9 @@
     - packer
     - docker
     - postman
+    - npm
+    - spotify
   tasks:
-  - name: install atom
-    homebrew_cask:
-      name: atom
-      state: present
-  - name: install npm
-    homebrew:
-      name: npm
-      state: present
-  - name: install spotify
-    homebrew_cask:
-      name: spotify
-      state: present
   - name: install slack
     homebrew_cask:
       name: slack
