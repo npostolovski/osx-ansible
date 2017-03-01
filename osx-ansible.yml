@@ -12,19 +12,8 @@
     - vagrant
     - packer
     - docker
+    - postman
   tasks:
-  - name: install docker
-    homebrew:
-      name: docker
-      state: present
-  - name: install docker-machine
-    homebrew:
-      name: docker-machine
-      state: present
-  - name: install postman
-    homebrew_cask:
-      name: postman
-      state: present
   - name: install atom
     homebrew_cask:
       name: atom
