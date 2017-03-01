@@ -1,0 +1,4 @@
+  - name: install hyper terminal
+    homebrew_cask:
+      name: hyper
+      state: present
