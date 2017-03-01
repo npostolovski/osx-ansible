@@ -1,4 +1,3 @@
-  tasks:
   - name: install slack
     homebrew_cask:
       name: slack
