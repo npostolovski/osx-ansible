@@ -2,11 +2,8 @@
 - hosts: localhost
   roles:
     - homebrew
+    - amethyst
   tasks:
-  - name: install amethyst window manager
-    homebrew_cask:
-      name: amethyst
-      state: present
   - name: install google chrome
     homebrew_cask:
       name: google-chrome

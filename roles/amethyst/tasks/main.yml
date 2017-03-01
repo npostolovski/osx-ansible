@@ -1,0 +1,4 @@
+  - name: install amethyst window manager
+    homebrew_cask:
+      name: amethyst
+      state: present
