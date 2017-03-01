@@ -1,0 +1,6 @@
+  - name: check homebrew install
+    shell: which brew
+    register: homebrew_installed
+  - name: install homebrew
+    shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    when: homebrew_installed.stdout == ""
