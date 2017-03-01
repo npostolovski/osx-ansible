@@ -15,11 +15,7 @@
     - postman
     - npm
     - spotify
-  tasks:
-  - name: install slack
-    homebrew_cask:
-      name: slack
-      state: present
+    - slack
   - name: install skype
     homebrew_cask:
       name: skype
