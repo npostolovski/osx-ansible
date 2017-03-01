@@ -1,0 +1,8 @@
+  - name: install docker
+    homebrew:
+      name: docker
+      state: present
+  - name: install docker-machine
+    homebrew:
+      name: docker-machine
+      state: present

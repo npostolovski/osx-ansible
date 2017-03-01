@@ -6,31 +6,13 @@
     - google_chrome
     - hyper
     - ruby
+    - dotfiles
+    - the_silver_searcher
+    - virtualbox
+    - vagrant
+    - packer
+    - docker
   tasks:
-  - name: copy ~/.bash_profile
-    copy:
-      src: ./dotfiles/.bash_profile
-      dest: ~/.bash_profile
-  - name: install the_silver_searcher
-    homebrew:
-      name: the_silver_searcher
-      state: present
-  - name: copy git config
-    copy:
-      src: ./dotfiles/.gitconfig
-      dest: ~/.gitconfig
-  - name: install virtualbox
-    homebrew_cask:
-      name: virtualbox
-      state: present
-  - name: install vagrant
-    homebrew_cask:
-      name: vagrant
-      state: present
-  - name: install packer
-    homebrew:
-      name: packer
-      state: present
   - name: install docker
     homebrew:
       name: docker
@@ -51,10 +33,6 @@
     homebrew:
       name: npm
       state: present
-  - name: copy hyper config
-    copy:
-      src: ./dotfiles/.hyper.js
-      dest: ~/.hyper.js
   - name: install spotify
     homebrew_cask:
       name: spotify

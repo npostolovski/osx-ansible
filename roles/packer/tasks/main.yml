@@ -1,0 +1,4 @@
+  - name: install packer
+    homebrew:
+      name: packer
+      state: present
