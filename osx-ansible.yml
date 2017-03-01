@@ -3,11 +3,8 @@
   roles:
     - homebrew
     - amethyst
+    - google_chrome
   tasks:
-  - name: install google chrome
-    homebrew_cask:
-      name: google-chrome
-      state: present
   - name: install hyper terminal
     homebrew_cask:
       name: hyper
