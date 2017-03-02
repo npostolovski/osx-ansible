@@ -1,8 +1,4 @@
   - name: install docker
-    homebrew:
+    homebrew_cask:
       name: docker
-      state: present
-  - name: install docker-machine
-    homebrew:
-      name: docker-machine
       state: present
