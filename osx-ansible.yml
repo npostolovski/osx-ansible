@@ -1,21 +1,22 @@
 ---
 - hosts: localhost
   roles:
-    - homebrew
     - amethyst
-    - google_chrome
-    - hyper
-    - ruby
-    - dotfiles
-    - the_silver_searcher
-    - virtualbox
-    - vagrant
-    - packer
     - docker
-    - postman
+    - dotfiles
+    - google_chrome
+    - homebrew
+    - hyper
     - npm
-    - spotify
-    - slack
-    - skype
-    - steam
+    - packer
     - postgres
+    - postman
+    - ruby
+    - skype
+    - slack
+    - spotify
+    - steam
+    - terraform
+    - the_silver_searcher
+    - vagrant
+    - virtualbox
