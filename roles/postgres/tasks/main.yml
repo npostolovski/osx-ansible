@@ -1,0 +1,9 @@
+---
+- name: install postgres app
+  homebrew_cask:
+    name: postgres 
+    state: present
+- name: install psql
+  homebrew:
+    name: postgres
+    state: present
