@@ -1,4 +1,0 @@
-  - name: install kops
-    homebrew:
-      name: kops
-      state: present

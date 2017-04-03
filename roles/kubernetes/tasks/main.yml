@@ -1,8 +1,39 @@
-- name: install kubectl
-  get_url:
-    url: https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/darwin/amd64/kubectl
-    mode: 0540
-    dest: .
+- name: download kubernetes
+  shell: curl -o /tmp/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  tags: kubernetes
 
-- name: add to path
-  command: mv ./kubectl /usr/local/bin/kubectl
+- name: make kubectl executable
+  file:
+    path: /tmp/kubectl
+    state: touch
+    mode: 0755
+  tags: kubernetes
+
+- name: move kubectl to /usr/local/bin
+  shell: mv /tmp/kubectl /usr/local/bin/kubectl
+  tags: kubernetes
+
+- name: download kops
+  get_url:
+    url: https://github.com/kubernetes/kops/releases/download/1.5.3/kops-linux-amd64
+    dest: /tmp/kops
+    mode: 0755
+    validate_certs: no
+  tags: kubernetes
+
+- name: move kops to /usr/local/bin
+  shell: mv /tmp/kops /usr/local/bin/kops
+
+- name: install rust for kubecfg
+  homebrew: name=rust state=present
+
+- name: install cargo for kubecfg
+  homebrew_cask: name=cargo state=present
+  ignore_errors: True
+
+- name: install kubecfg
+  command: cargo install --git https://github.com/anguslees/kubecfg.git
+  ignore_errors: True
+
+- name: put kubecfg on path
+  shell: export PATH=$PATH:$HOME/.cargo/bin
