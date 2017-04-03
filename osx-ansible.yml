@@ -2,11 +2,13 @@
 - hosts: localhost
   roles:
     - amethyst
+    - aws
     - docker
     - dotfiles
     - google_chrome
     - homebrew
     - hyper
+    - kops
     - npm
     - packer
     - postgres
