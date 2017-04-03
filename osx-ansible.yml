@@ -9,6 +9,7 @@
     - homebrew
     - hyper
     - kops
+    - kubernetes
     - npm
     - packer
     - postgres

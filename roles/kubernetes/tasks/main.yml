@@ -1,0 +1,8 @@
+- name: install kubectl
+  get_url:
+    url: https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/darwin/amd64/kubectl
+    mode: 0540
+    dest: .
+
+- name: add to path
+  command: mv ./kubectl /usr/local/bin/kubectl
