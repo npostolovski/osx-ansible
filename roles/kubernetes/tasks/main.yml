@@ -23,17 +23,3 @@
 
 - name: move kops to /usr/local/bin
   shell: mv /tmp/kops /usr/local/bin/kops
-
-- name: install rust for kubecfg
-  homebrew: name=rust state=present
-
-- name: install cargo for kubecfg
-  homebrew_cask: name=cargo state=present
-  ignore_errors: True
-
-- name: install kubecfg
-  command: cargo install --git https://github.com/anguslees/kubecfg.git
-  ignore_errors: True
-
-- name: put kubecfg on path
-  shell: export PATH=$PATH:$HOME/.cargo/bin
