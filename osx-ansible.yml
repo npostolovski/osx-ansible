@@ -5,6 +5,7 @@
     - aws
     - docker
     - dotfiles
+    - elixir
     - google_chrome
     - homebrew
     - hyper
